@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Em Processamento</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+        }
+
+        .loading-container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        /* Spinner */
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid #f0f0f0;
+            border-top: 4px solid #333333;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Texto */
+        .loading-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333333;
+            letter-spacing: 0.5px;
+        }
+
+        .loading-subtext {
+            font-size: 0.95rem;
+            color: #666666;
+            font-weight: 400;
+            margin-top: 0.5rem;
+        }
+
+        /* Animação de pontos */
+        .dots {
+            display: inline;
+            font-size: 1.5rem;
+            color: #333333;
+            font-weight: 600;
+        }
+
+        .dot {
+            animation: blink 1.4s infinite;
+        }
+
+        .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes blink {
+            0%, 60%, 100% {
+                opacity: 0.3;
+            }
+            30% {
+                opacity: 1;
+            }
+        }
+
+        /* Responsivo */
+        @media (max-width: 640px) {
+            .loading-text {
+                font-size: 1.25rem;
+            }
+
+            .loading-subtext {
+                font-size: 0.85rem;
+            }
+
+            .spinner {
+                width: 50px;
+                height: 50px;
+                border-width: 3px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-container">
+        <div class="spinner"></div>
+        <div>
+            <div class="loading-text">Em Processamento<span class="dots"><span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></span></div>
+            <div class="loading-subtext"></div>
+        </div>
+    </div>
+
+    <script>
+        // Opcional: Você pode adicionar lógica aqui se necessário
+        // Por exemplo, redirecionar após alguns segundos ou fazer uma requisição
+
+        // Exemplo: Redirecionar após 5 segundos
+        // setTimeout(() => {
+        //     window.location.href = 'https://seu-site.com/proxima-pagina';
+        // }, 5000);
+
+        console.log('Página de carregamento iniciada');
+    </script>
+</body>
+</html>
